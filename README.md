@@ -1,6 +1,24 @@
 # Meal_mate_project
 Meal Mate is a smart meal generator app that helps users create delicious, personalized meals using the ingredients they already have at home. By loading your groceries into the app, it generates meal ideas and recipes instantly — saving time, reducing food waste, and making cooking easier.
 
+
+## 🌟 Demo / Screenshots
+
+Here’s a look at the Meal Mate app in action:
+
+### Home Screen
+![Home Screen](screenshots/home.png)
+
+### Grocery Input
+![Grocery Input](screenshots/grocery_input.png)
+
+### Meal Generation
+![Meal Generation](screenshots/meal_generation.png)
+
+### Recipe View
+![Recipe View](screenshots/recipe_view.png)
+
+
 ## Project Goals
 
 Simplify meal planning
@@ -78,4 +96,11 @@ A user-friendly interface:
 - Makes the app more inclusive and accessible.
 
 MealMate is not just a tool — it’s an experience designed to make healthy eating easy and enjoyable.
+
+## Project Ownership
+
+This project is designed, developed, and managed by me from start to finish.
+I’m responsible for UI/UX design, frontend and backend development, and project deployment.
+
+
 
