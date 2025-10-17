@@ -6,39 +6,30 @@ Meal Mate is a smart meal generator app that helps users create delicious, perso
 
 Here’s a preview of the Meal Mate app in action — showing how easy it is to plan meals using your groceries.
 
-🏠 Home Screen
+ Home Screen
 
 
 Quick access to your pantry, meal suggestions, and planner.
 
-🛒 Grocery Input
+ Grocery Input
 
 
 Add or scan ingredients you have in your kitchen.
 
-🍽️ Meal Generation
+ Meal Generation
 
 
 AI-generated meal suggestions based on your available groceries.
 
-📋 Recipe View
+ Recipe View
 
 
 Step-by-step instructions, prep time, servings, and favorite option.
 
-🗓️ Meal Planner
+ Meal Planner
 
 
 Drag and drop meals into daily or weekly planners, with shopping list integration.
-
-
-
-##  Demo / Screenshot
-
-Here’s a preview of Meal Mate:
-
-![Meal Mate Screenshot](screenshots/home.png)
-
 
 
 ## Project Goals
