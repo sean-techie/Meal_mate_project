@@ -1,50 +1,22 @@
-import { useState } from "react";
-import Link from "next/link";
+import Layout from "../components/Layout";
+import MealCard from "../components/MealCard";
 
 export default function Groceries() {
-  const [item, setItem] = useState("");
-  const [groceries, setGroceries] = useState<string[]>([]);
-
-  const addItem = () => {
-    if (!item.trim()) return;
-    setGroceries([...groceries, item.trim()]);
-    setItem("");
-  };
+  const groceries = [
+    { name: "Tomatoes", description: "Fresh and ripe" },
+    { name: "Chicken Breast", description: "Boneless and skinless" },
+    { name: "Pasta", description: "Spaghetti or penne" },
+    { name: "Curry Powder", description: "Spicy and aromatic" },
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <Link href="/" className="text-green-600 underline">
-        ← Back
-      </Link>
-
-      <h1 className="text-2xl font-bold mt-4 mb-4">My Groceries</h1>
-
-      <div className="flex gap-2 mb-4 max-w-md">
-        <input
-          className="border p-2 flex-1 rounded"
-          value={item}
-          onChange={(e) => setItem(e.target.value)}
-          placeholder="e.g. rice, chicken"
-        />
-        <button
-          onClick={addItem}
-          className="bg-green-600 text-white px-4 rounded"
-        >
-          Add
-        </button>
+    <Layout>
+      <h1 className="text-3xl font-bold mb-6">Groceries</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {groceries.map((item, index) => (
+          <MealCard key={index} name={item.name} description={item.description} />
+        ))}
       </div>
-
-      {groceries.length === 0 ? (
-        <p className="text-gray-500">No groceries added yet.</p>
-      ) : (
-        <ul className="bg-white rounded shadow max-w-md">
-          {groceries.map((g, i) => (
-            <li key={i} className="border-b p-2 last:border-none">
-              {g}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    </Layout>
   );
 }

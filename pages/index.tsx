@@ -1,19 +1,20 @@
-import Link from "next/link";
+import Layout from "../components/Layout";
+import MealCard from "../components/MealCard";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      <h1 className="text-4xl font-bold mb-4">MealMate 🍽️</h1>
-      <p className="text-center mb-6 max-w-md">
-        Add the groceries you have and get meal ideas instantly.
-      </p>
+  const meals = [
+    { name: "Spaghetti Bolognese", description: "Classic Italian pasta" },
+    { name: "Chicken Curry", description: "Spicy Indian curry" },
+  ];
 
-      <Link
-        href="/groceries"
-        className="bg-green-600 text-white px-6 py-3 rounded"
-      >
-        Get Started
-      </Link>
-    </div>
+  return (
+    <Layout>
+      <h1 className="text-3xl font-bold mb-6">Meals</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {meals.map((meal, index) => (
+          <MealCard key={index} name={meal.name} description={meal.description} />
+        ))}
+      </div>
+    </Layout>
   );
 }
