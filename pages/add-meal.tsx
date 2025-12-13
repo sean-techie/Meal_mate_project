@@ -1,32 +1,38 @@
-import { useState } from "react";
+// pages/add-meal.tsx
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 
-export default function AddMeal() {
+const AddMeal: React.FC = () => {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch("/api/addMeal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, description }),
-    });
+    try {
+      const res = await fetch("/api/addMeal", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, description }),
+      });
 
-    if (res.ok) {
-      setName("");
-      setDescription("");
-      router.push("/"); // Go back to Home page
-    } else {
-      alert("Failed to add meal");
+      if (res.ok) {
+        setName("");
+        setDescription("");
+        router.push("/"); // Redirect to Home page
+      } else {
+        alert("Failed to add meal");
+      }
+    } catch (error) {
+      console.error("Error adding meal:", error);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -62,4 +68,6 @@ export default function AddMeal() {
       </form>
     </Layout>
   );
-}
+};
+
+export default AddMeal;
